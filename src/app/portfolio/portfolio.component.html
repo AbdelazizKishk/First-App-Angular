@@ -1,0 +1,104 @@
+<section class="portfolio py-3">
+  <h2 class="text-uppercase fs-1 fw-bold pb-2 text-center">
+    portfolio component
+  </h2>
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <div class="line me-3"></div>
+    <i class="fa-solid fa-star"></i>
+    <div class="line ms-3"></div>
+  </div>
+  <div class="container">
+    <div class="row g-5">
+      @for (imgSrc of imgSrcs; track $index) {
+      <div class="col-md-4">
+        <div class="inner" (click)="openModal($index)">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" [src]="imgSrc.image" alt="image" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 left-0 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      <!-- <div class="col-md-4">
+        <div class="inner">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" src="/imgs/port3.png" alt="" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" src="/imgs/port2.png" alt="" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" src="/imgs/port3.png" alt="" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" src="/imgs/port2.png" alt="" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner">
+          <div class="img position-relative">
+            <img class="w-100 rounded-3" src="/imgs/poert1.png" alt="" />
+            <div
+              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
+            >
+              <i class="text-white fa-solid fa-plus fa-6x"></i>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+<div
+  [class.d-none]="!isModalOpen"
+  [class.d-block]="isModalOpen"
+  class="light-container"
+  (click)="closeModal()"
+>
+  <div
+    class="box position-relative d-flex justify-content-center align-items-center"
+  >
+    <img [src]="selectedImage.image" class="w-40" alt="image" />
+    <i
+      (click)="closeModal()"
+      class="fa-solid fa-circle-xmark position-absolute"
+    ></i>
+  </div>
+</div>

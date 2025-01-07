@@ -1,0 +1,9 @@
+.home {
+  background-color: #1abc9c;
+  padding: 70px;
+}
+.home .line {
+  height: 4px;
+  width: 80px;
+  background-color: #fff;
+}

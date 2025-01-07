@@ -1,0 +1,57 @@
+<section class="contant py-4">
+  <h2 class="text-uppercase fs-1 fw-bold pb-2 text-center">conatct section</h2>
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <div class="line me-3"></div>
+    <i class="fa-solid fa-star"></i>
+    <div class="line ms-3"></div>
+  </div>
+  <div class="container pt-5">
+    <div class="form mx-auto w-50">
+      <div class="mb-3">
+        <label for="UserName" [class.top]="UserName">User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="UserName"
+          placeholder="User Name"
+          [(ngModel)]="UserName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UserAge" [class.top]="UserAge">User Age</label>
+        <input
+          type="number"
+          class="form-control"
+          id="UserAge"
+          placeholder="User Age"
+          [(ngModel)]="UserAge"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UserEmail" [class.top]="UserEmail">User Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="UserEmail"
+          placeholder="User Email"
+          [(ngModel)]="UserEmail"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UserPassword" [class.top]="UserPassword"
+          >User Password</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="UserPassword"
+          placeholder="User Password"
+          [(ngModel)]="UserPassword"
+        />
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
