@@ -19,31 +19,18 @@ i {
 }
 .light-container {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 999;
   background-color: rgba(194, 219, 254, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.light-container .box {
-  width: 100%;
-  height: 100%;
-}
-.w-40 {
-  width: 40% !important;
-}
 .box i {
   font-size: 30px;
-  z-index: 999;
   color: #fff;
   cursor: pointer;
-}
-.box .fa-solid {
-  position: absolute;
-  top: 23%;
-  right: 31%;
 }

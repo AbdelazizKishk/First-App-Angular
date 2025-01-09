@@ -27,6 +27,11 @@ export class PortfolioComponent {
   }
 
   closeSlied(eInfo: MouseEvent): void {
+    eInfo.stopPropagation();
     this.status = true;
+  }
+
+  imgLightBox(e: Event): void {
+    e.stopPropagation();
   }
 }

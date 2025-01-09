@@ -34,7 +34,15 @@
   <div
     class="box position-relative d-flex justify-content-center align-items-center"
   >
-    <img [src]="imgSrc" class="w-40 rounded-3" alt="image" />
-    <i class="fa-solid fa-circle-xmark position-absolute"></i>
+    <img
+      (click)="imgLightBox($event)"
+      [src]="imgSrc"
+      class="rounded-3"
+      alt="image"
+      [style]="'width:600px;'"
+    />
+    <div class="position-absolute top-0 end-0 m-3">
+      <i class="fa-solid fa-circle-xmark"></i>
+    </div>
   </div>
 </div>
