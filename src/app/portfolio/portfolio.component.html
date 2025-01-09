@@ -9,11 +9,11 @@
   </div>
   <div class="container">
     <div class="row g-5">
-      @for (imgSrc of imgSrcs; track $index) {
+      @for (image of images; track $index) {
       <div class="col-md-4">
-        <div class="inner" (click)="openModal($index)">
+        <div class="inner" (click)="showContainer(image, $index)">
           <div class="img position-relative">
-            <img class="w-100 rounded-3" [src]="imgSrc.image" alt="image" />
+            <img class="w-100 rounded-3" [src]="image" alt="image" />
             <div
               class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 left-0 top-0"
             >
@@ -23,82 +23,18 @@
         </div>
       </div>
       }
-      <!-- <div class="col-md-4">
-        <div class="inner">
-          <div class="img position-relative">
-            <img class="w-100 rounded-3" src="/imgs/port3.png" alt="" />
-            <div
-              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
-            >
-              <i class="text-white fa-solid fa-plus fa-6x"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="inner">
-          <div class="img position-relative">
-            <img class="w-100 rounded-3" src="/imgs/port2.png" alt="" />
-            <div
-              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
-            >
-              <i class="text-white fa-solid fa-plus fa-6x"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="inner">
-          <div class="img position-relative">
-            <img class="w-100 rounded-3" src="/imgs/port3.png" alt="" />
-            <div
-              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
-            >
-              <i class="text-white fa-solid fa-plus fa-6x"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="inner">
-          <div class="img position-relative">
-            <img class="w-100 rounded-3" src="/imgs/port2.png" alt="" />
-            <div
-              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
-            >
-              <i class="text-white fa-solid fa-plus fa-6x"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="inner">
-          <div class="img position-relative">
-            <img class="w-100 rounded-3" src="/imgs/poert1.png" alt="" />
-            <div
-              class="layer d-flex justify-content-center align-items-center position-absolute rounded-3 w-100 h-100 top-0"
-            >
-              <i class="text-white fa-solid fa-plus fa-6x"></i>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
 <div
-  [class.d-none]="!isModalOpen"
-  [class.d-block]="isModalOpen"
   class="light-container"
-  (click)="closeModal()"
+  (click)="closeSlied($event)"
+  [class.d-none]="status"
 >
   <div
     class="box position-relative d-flex justify-content-center align-items-center"
   >
-    <img [src]="selectedImage.image" class="w-40" alt="image" />
-    <i
-      (click)="closeModal()"
-      class="fa-solid fa-circle-xmark position-absolute"
-    ></i>
+    <img [src]="imgSrc" class="w-40 rounded-3" alt="image" />
+    <i class="fa-solid fa-circle-xmark position-absolute"></i>
   </div>
 </div>

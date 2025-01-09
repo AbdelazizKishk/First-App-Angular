@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-interface Isrc {
-  image: string;
-}
-
 @Component({
   selector: 'app-portfolio',
   imports: [],
@@ -11,28 +7,26 @@ interface Isrc {
   styleUrl: './portfolio.component.css',
 })
 export class PortfolioComponent {
-  imgSrcs: Isrc[] = [
-    { image: '/imgs/poert1.png' },
-    { image: '/imgs/port2.png' },
-    { image: '/imgs/port3.png' },
-    { image: '/imgs/port2.png' },
-    { image: '/imgs/port3.png' },
-    { image: '/imgs/poert1.png' },
+  images: string[] = [
+    '/imgs/poert1.png',
+    '/imgs/port2.png',
+    '/imgs/port3.png',
+    '/imgs/port2.png',
+    '/imgs/port3.png',
+    '/imgs/poert1.png',
   ];
 
-  isModalOpen = false;
-  currentIndex: number = 0;
+  imgSrc: string = '';
+  imgIndex: number = 0;
+  status: boolean = true;
 
-  get selectedImage(): Isrc {
-    return this.imgSrcs[this.currentIndex];
+  showContainer(src: string, index: number): void {
+    this.imgSrc = src;
+    this.imgIndex = this.imgIndex;
+    this.status = false;
   }
 
-  openModal(index: number): void {
-    this.currentIndex = index;
-    this.isModalOpen = true;
-  }
-
-  closeModal(): void {
-    this.isModalOpen = false;
+  closeSlied(eInfo: MouseEvent): void {
+    this.status = true;
   }
 }
