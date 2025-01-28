@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   z-index: 99;
+  transition: all 0.5s;
 }
 html {
   scroll-behavior: smooth;
